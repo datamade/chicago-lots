@@ -49,8 +49,7 @@ var LargeLots = {
           info += "<p>PIN: " + props.pin14 + "<br />";
           info += "Zoned: " + props.zoning_classification + "<br />";
           info += "Sq Ft: " + props.sq_ft + "<br />";
-          info += "Alderman: " + LargeLots.getAlderman(props.ward) + " (Ward " + props.ward + ")</p>";
-
+          
           this._div.innerHTML  = info;
         }
       };
@@ -67,12 +66,12 @@ var LargeLots = {
           user_name: 'datamade',
           type: 'cartodb',
           sublayers: [{
-                  sql: "SELECT * FROM englewood_large_lots WHERE zoning_classification = 'RT-4A' OR zoning_classification = 'RT-3.5' OR zoning_classification = 'RS-2' OR zoning_classification = 'RS-3' OR zoning_classification = 'RM-6' OR zoning_classification = 'RT-3.5' OR zoning_classification = 'RM-5' OR zoning_classification = 'RT-3.5' OR zoning_classification = 'RT-4'",
+                  sql: "SELECT * FROM land_inventory_parcels",
                   cartocss: LargeLots.parcelsCartocss,
                   interactivity: fields
               },
               {
-                  sql: 'select * from large_lot_boundary',
+                  sql: 'select * from chicago_city_boundary',
                   cartocss: LargeLots.boundaryCartocss
               }]
       }
@@ -121,7 +120,7 @@ var LargeLots = {
         LargeLots.map.removeLayer(LargeLots.lastClickedLayer);
       }
       var sql = new cartodb.SQL({user: 'datamade', format: 'geojson'});
-      sql.execute('select * from englewood_large_lots where pin14 = {{pin14}}', {pin14:pin14})
+      sql.execute('select * from land_inventory_parcels where pin14 = {{pin14}}', {pin14:pin14})
         .done(function(data){
             var shape = data.features[0];
             LargeLots.lastClickedLayer = L.geoJson(shape);
@@ -134,36 +133,17 @@ var LargeLots = {
 
   selectParcel: function (props){
       var address = LargeLots.formatAddress(props);
-      var alderman = LargeLots.getAlderman(props.ward);
       var zoning = LargeLots.getZoning(props.zoning_classification);
       var info = "<p>Selected lot: </p><img class='img-responsive img-thumbnail' src='http://cookviewer1.cookcountyil.gov/Jsviewer/image_viewer/requestImg.aspx?" + props.pin14 + "=' />\
         <table class='table table-bordered table-condensed'><tbody>\
           <tr><td>Address</td><td>" + address + "</td></tr>\
           <tr><td>PIN</td><td>" + props.pin14 + "</td></tr>\
           <tr><td>&nbsp;</td><td><a target='_blank' href='http://cookcountypropertyinfo.com/Pages/PIN-Results.aspx?PIN=" + props.pin14 + "'>Tax and deed history &raquo;</a></td></tr>\
-          <tr><td>Zoned</td><td> Residential (<a href='http://secondcityzoning.org/zone/" + props.zoning_classification + "' target='_blank'>" + props.zoning_classification + "</a>)</td></tr>\
+          <tr><td>Zoned</td><td><a href='http://secondcityzoning.org/zone/" + props.zoning_classification + "' target='_blank'>" + props.zoning_classification + "</a></td></tr>\
           <tr><td>Sq ft</td><td>" + props.sq_ft + "</td></tr>\
-          <tr><td>Alderman</td><td>" + alderman + " (Ward " + props.ward + ")</td></tr>\
         </tbody></table>";
       $.address.parameter('pin', props.pin14)
       $('#lot-info').html(info);
-  },
-
-  getAlderman: function (ward){
-      var lookup = {
-          20: 'Willie B. Cochran',
-          6: 'Roderick T. Sawyer',
-          16: 'JoAnn Thompson',
-          17: 'Latasha Thomas',
-          11: 'James A. Balcer',
-          15: 'Toni Foulkes',
-          18: 'Lona Lane',
-          3: 'Pat Dowell',
-          4: 'William Burns',
-          5: 'Leslie Hariston',
-          8: 'Michelle Harris'
-      }
-      return lookup[ward]
   },
 
   getZoning: function(code){

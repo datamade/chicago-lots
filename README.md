@@ -19,13 +19,11 @@ navigate to http://localhost:8000/
 Our map was built using open data from Chicago and Cook County:
 
 * [Chicago - City Owned Land Inventory](https://data.cityofchicago.org/Community-Economic-Development/City-Owned-Land-Inventory/aksk-kvfp)
-* [Chicago - Wards](https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Wards/bhcv-wqkf)
 * [Cook County - 2012 Parcels](https://datacatalog.cookcountyil.gov/GIS-Maps/ccgisdata-Parcel-2012/e62c-6rz8)
 
 # dependencies
 We used the following open source tools:
 
-* [QGIS](http://www.qgis.org/en/site/) - graphic information system (GIS) desktop application
 * [PostGIS](http://postgis.net/) - geospatial database
 * [Bootstrap](http://getbootstrap.com/) - Responsive HTML, CSS and Javascript framework
 * [Leaflet](http://leafletjs.com/) - javascript library interactive maps

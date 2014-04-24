@@ -24,15 +24,15 @@
     <!-- <link href="//cdn.leafletjs.com/leaflet-0.5/leaflet.css" media="screen" rel="stylesheet" type="text/css" /> -->
     <!-- <link href="css/leaflet.label.css" media="all" rel="stylesheet" type="text/css" /> -->
     <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
-    <style id="englewood-styles">
-      #englewood_large_lots {
+    <style id="chicago-lots-styles">
+      #parcel {
         polygon-fill: #6baed6;
         polygon-opacity: 0.7;
         line-color: #08519c;
         line-width: 0.5;
         line-opacity: 1;
       }
-      #englewood_large_lots[zoning_classification=~".*R.*"] {
+      #parcel[zoning_classification=~".*R.*"] {
        line-color: #006d2c;
        polygon-fill: #41ab5d;
       }
@@ -100,15 +100,14 @@
 
             <ul>
               <li><a href='https://data.cityofchicago.org/Community-Economic-Development/City-Owned-Land-Inventory/aksk-kvfp'>Chicago - City Owned Land Inventory</a></li>
-              <li><a href='https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Wards/bhcv-wqkf'>Chicago - Wards</a></li>
               <li><a href='https://datacatalog.cookcountyil.gov/GIS-Maps/ccgisdata-Parcel-2012/e62c-6rz8'>Cook County - 2012 Parcels</a></li>
             </ul>
             
             <p>We prepared some extracts of the above sources for this project. You can download those here:</p>
             
             <ul>
-                <li>Complete listing of lots displayed in the map (<a href="#">CSV</a>)</li>
-                <li>Geospatial definitions of the lots displayed above (<a href="#">Shapefile</a>)</li>
+                <li>Complete listing of lots displayed in the map (<a href="https://raw.githubusercontent.com/datamade/chicago-lots/master/data/build/land-inventory.csv">CSV</a>)</li>
+                <li>Geospatial definitions of the lots displayed above (<a href="https://raw.githubusercontent.com/datamade/chicago-lots/master/data/build/land-inventory-parcels.geojson">GeoJSON</a>)</li>
             </ul>
 
             <p>All the code for this site is open source and <a href='https://github.com/datamade/chicago-lots'>available on Github</a>. We used the following open source tools:</p>

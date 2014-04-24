@@ -9,7 +9,7 @@ var LargeLots = {
   marker: null,
   locationScope: 'Chicago',
   boundaryCartocss: '#large_lot_boundary{polygon-fill: #ffffbf;polygon-opacity: 0.2;line-color: #FFF;line-width: 3;line-opacity: 1;}',
-  parcelsCartocss: $('#englewood-styles').html().trim(),
+  parcelsCartocss: $('#chicago-lots-styles').html().trim(),
   boundingBox: {
     'bottom': 42.023134979999995,
     'top': 41.644286009999995,
@@ -61,7 +61,7 @@ var LargeLots = {
       LargeLots.info.addTo(LargeLots.map);
 
       var fields = "pin14,zoning_classification,ward,street_name,dir,street_number,type,sq_ft"
-      var cartocss = $('#englewood-styles').html().trim();
+      var cartocss = $('#chicago-lots-styles').html().trim();
       var layerOpts = {
           user_name: 'datamade',
           type: 'cartodb',

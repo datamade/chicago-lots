@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Large Lots</title>
+    <title>Chicago Lots</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -46,17 +46,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a id='logo' href="/"><img src='images/large_lots.png' alt='Large Lots' /></a>
+          <a class='navbar-brand' href="/">Chicago Lots - Explore City-owned lots</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav pull-right">
-            <li><a href="#step1">Find a lot</a></li>
-            <li><a href="#step2">Eligibility</a></li>
-            <li><a href="#step3">Application</a></li>
-            <li><a href="#step4">Submit</a></li>
-            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#find-a-lot">Find a lot</a></li>
             <li><a href="#about">About</a></li>
-            <li><a class='btn-default' id='print-page' href="#"><i class='icon-print'></i> Print</a></li>
+            <li><a id='print-page' href="#"><i class='icon-print'></i> Print</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -64,18 +60,10 @@
 
     <div class="container">
       <div class='col-md-12'>
-        <p class='lead'><br /><br /><br />The City of Chicago is <a href='http://www.cityofchicago.org/city/en/depts/dcd/supp_info/large-lot-program.html'>selling vacant lots on the South Side</a> for <strong>$1</strong> until <strong>April 21, 2014</strong>. Here's how you get one.<br /><br /></p>
-        <hr />
         <div class='row'>
 
-          <div class='col-md-8'>
-            <div class='alert alert-success'>
-              <p><strong>Please note:</strong> The Large Lots Pilot Program ended on April 21st, 2014 and the City of Chicago is no longer accepting applications.</p>
-            </div>
-            <h2 id='step1'>Step 1) Find a City-owned, residential lot on your block</h2>
-            <p>Enter your address or browse on the map below to find the lot(s) you would like to purchase.<br /> 
-            <p>The city is only selling lots that are residential and have no buildings on them. <br />Each lot has its own 14-digit <strong>PIN</strong> number. Write it down for your application.</p>
-
+          <br /><br />
+          <div class='col-md-8' id='find-a-lot'>
             <p>
               <form class='form-inline hidden-print'>
                 <input class='form-control input-lg' id='search_address' placeholder='Enter your address' type='text' />
@@ -100,169 +88,9 @@
         </div>
         <div class='row'>
           <div class='col-md-8 steps'>
-
-            <hr />
-            <h2 id='step2'>Step 2) Make sure you're eligible</h2>
-
-            <ul>
-              <li>You must <strong>own property on the same block</strong> as the lot you want. To prove this, you need to include a copy of your property deed in your application.</li>
-
-              <li>The lot must be <strong>owned by the City</strong>. It has to be <strong>vacant</strong> - no buildings allowed. And it needs to be <strong>zoned residential</strong> - that means you can't put a store or office there, only housing.</li>
-
-              <li>You can apply for <strong>up to two lots</strong> on your block.</li>
-
-              <li>You <strong>can't owe the City any money</strong>. You need to have paid all property taxes, <a href='http://www.cityofchicago.org/city/en/depts/fin/provdrs/water_division/svcs/paying_the_waterbill.html'>water bills</a>, <a href='https://parkingtickets.cityofchicago.org/CPSWeb/web/EnterTickets.jsp'>parking tickets</a>, and any other obligations to the City.</li>
-
-              <li>After you buy the lot, you need to <strong>own it for at least five years</strong> before selling it.</li>
-
-              <li>You'll need to maintain the lot in accordance with all local building, housing and zoning codes and ordinances. The Department of Planning and Development strongly encourages potential applicants to review the ordinances pertaining to <a href='http://www.chicagocode.org/7-28-120/'>Weeds</strong> and <a href='http://www.chicagocode.org/7-28-740/'>Lot Maintenance and Fencing</a></li>
-
-              <li>You need to include an <a href='https://www.cityofchicago.org/content/dam/city/depts/dps/EDS/EDS_2012a.pdf'>Economic Disclosure Statement</a> (EDS) along with the application. This is a legal document the City uses to learn more about you or your organization before signing a contract with you.</li>
-
-              <li>If you are a <strong>non-profit</strong>, include your <a href='http://www.cyberdriveillinois.com/publications/business_services/nfp.html'>articles of incorporation and certificate of good standing</a> from the State of Illinois with the application.</li>
-
-              <li><strong>Churches</strong> are not eligible.</li>
-            </ul>
-
-            <hr />
-            <h2 id='step3'>Step 3) Put together your application</h2>
-
-            <p>To purchase a lot, you need to put together an <strong>application package</strong> to <strong>mail</strong> to the City of Chicago's Department of Planning and Development.</p>
-
-            <p>This package will include:</p>
-
-            <ol>
-              <li><a href='#step3a'>Large Lot Application Form</a></li>
-              <li><a href='#step3b'>Copy of your Deed</a></li>
-              <li><a href='#step3c'>Economic Disclosure Statement</a></li>
-              <li>If a non-profit organization, articles of incorporation and certificate of good standing from the State of Illinois</li>
-            </ol>
-
-            <hr />
-            <h3 id='step3a'>1. Large Lot Application Form</h3>
-
-            <p>Download and fill out the <a href='http://www.cityofchicago.org/content/dam/city/depts/zlup/Sustainable_Development/Publications/Green%20Healthy%20Neighborhoods/Large_Lot_Pilot_Application.pdf'>Large Lot Pilot Program application form</a>.</p>
-
-            <a href='http://www.cityofchicago.org/content/dam/city/depts/zlup/Sustainable_Development/Publications/Green%20Healthy%20Neighborhoods/Large_Lot_Pilot_Application.pdf'><img class='img-responsive img-thumbnail' src='images/large-lot-application.png' /></a>
-
-            <hr />
-            <h3 id='step3b'>2. Copy of your Deed</h3>
-
-            <p>The City requires that you <strong>submit a copy of your deed</strong> to prove that you already own property on the block. If you don't have it handy, you can get it <a href='#deed-online'>online</a> or pick it up <a href='#deed-in-person'>in person</a>.</p>
-
-            <br />
-
-            <p id='deed-online'><strong>Download a copy from the Cook County Recorder of Deeds</strong></p>
-            <p>You can <a href='http://cookrecorder.com/search-our-records/'>download a copy</a> from the Cook County Recorder of Deeds website for $2.50.</p>
-
-            <p><a href='http://cookrecorder.com/search-our-records/'><img class='img-responsive img-thumbnail' src='images/ccrd-website.png' /></a></p>
-
-            <p>You will need to know the <strong>PIN</strong> of <i>your own</i> property. You can look it up by your address on <a href='http://cookcountypropertyinfo.com/Pages/PIN-Search.aspx'>CookCountyPropertyInfo.com</a>.</p>
-
-            <p><a href='http://cookcountypropertyinfo.com/Pages/PIN-Search.aspx'><img class='img-responsive img-thumbnail' src='images/ccpi-website.png' /></a></p>
-
-            <br />
-
-            <p id='deed-in-person'><strong>Or pick it up in person</strong></p>
-
-            <p>You can also go to the Cook County Recorder of Deeds office and get a printed copy.</p>
-
-            <p>
-              Cook County Recorder of Deeds<br />
-              118 N. Clark St, Room 120<br />
-              Chicago, IL 60602
-            </p>
-
-            <hr />
-            <h3 id='step3c'>3. Economic Disclosure Statement</h3>
-
-            <p>Everyone who does business with the City of Chicago needs to fill out an <a href='https://www.cityofchicago.org/content/dam/city/depts/dps/EDS/EDS_2012a.pdf'>Economic Disclosure Statement</a> (EDS), and since you are buying a lot from them, you need to fill one out too.</p> 
-
-            <p>Many of the sections on the form are for businesses, so fill it out to the best of your ability according to the <a href='https://www.cityofchicago.org/content/dam/city/depts/dps/RulesRegulations/EDS2010Instructions.pdf'>instructions</a>.</p>
-
-            <a href='https://www.cityofchicago.org/content/dam/city/depts/dps/EDS/EDS_2012a.pdf'><img alt='EDS form' class='img-responsive img-thumbnail' src='images/eds-form.png' /></a>
-
-            <hr />
-            <h2 id='step4'>Step 4) Submit your application</h2>
-            <p>Large Lot Pilot Program applications must be received by the close of business on <strong>April 21, 2014</strong>. Incomplete applications will not be considered.</p>
-            <p>Mail your complete application package to:</p>
-
-            <p>
-              <strong>Department of Planning and Development</strong><br />
-              Attn: Jeanne Chandler<br />
-              121 N. LaSalle Street, Room 905<br />
-              Chicago, IL 60602
-            </p>
-
-            <hr />
-            <h2 id='faq'>Frequently asked questions</h2>
-
-            <strong id='faq-estimated-taxes'>How much in property taxes will I pay?</strong>
-            <p>The amount of yearly property tax you will pay is determined by the <a href='http://www.cookcountyassessor.com/'>Cook County Assessor</a> and based on the <a href='http://www.cookcountyassessor.com/propertyvaluation.aspx'>assessed value</a> of the property and the tax rates for all local governments providing services in your community.</p>
-
-            <p>To get a sense of what the property tax will be for your vacant lot, we took a look at the taxes paid for a few vacant lots sold by the City of Chicago:</p>
-
-            <table class='table'>
-              <thead>
-                <tr>
-                  <td>Address</td>
-                  <td>Sq ft</td>
-                  <td>Assessed value</td>
-                  <td>2012 taxes</td>
-                  <td>Sold on</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>5302 S Winchester Ave</td>
-                  <td>2,892</td>
-                  <td>$15,900</td>
-                  <td><a href='http://cookcountypropertyinfo.com/Pages/PIN-Results.aspx?PIN=20074160240000'>$287.65</a></td>
-                  <td><a href='http://chicagocouncilmatic.org/legislation/935330'>Sept 8, 2011</td>
-                </tr>
-                <tr>
-                  <td>745 N Cicero Ave</td>
-                  <td>3,305</td>
-                  <td>$28,268</td>
-                  <td><a href='http://cookcountypropertyinfo.com/Pages/PIN-Results.aspx?PIN=16101000030000'>$548.01</a></td>
-                  <td><a href='http://chicagocouncilmatic.org/legislation/915228'>Jul 6, 2011</td>
-                </tr>
-                <tr>
-                  <td>1319 S Tripp Ave</td>
-                  <td>3,142</td>
-                  <td>$31,420</td>
-                  <td><a href='http://cookcountypropertyinfo.com/Pages/PIN-Results.aspx?PIN=16222110070000'>$563.81</a></td>
-                  <td><a href='http://chicagocouncilmatic.org/legislation/874345'>Apr 13, 2011</td>
-                </tr>
-                <tr>
-                  <td>1326 W 109th St</td>
-                  <td>3,730</td>
-                  <td>$20,510</td>
-                  <td><a href='http://cookcountypropertyinfo.com/Pages/PIN-Results.aspx?PIN=25173130320000'>$368.83</a></td>
-                  <td><a href='http://chicagocouncilmatic.org/legislation/848704'>March 9, 2011</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <strong id='faq-back-taxes'>Will I have to pay back taxes?</strong>
-            <p>No you will not. When the lot is sold, no unpaid taxes by the previous owner will be transferred to you.</p>
-
-            <hr />
-            <h2 id='questions'>More questions?</h2>
-            <p>Read more about this program on the <a href='http://www.cityofchicago.org/city/en/depts/dcd/supp_info/large-lot-program.html'>City of Chicago website</a>. Please direct questions about the Large Lot Pilot Program to:</p>
-
-            <p>
-              <strong>Jeanne Chandler</strong><br />
-              Department of Planning and Development<br />
-              Phone: (312) 744-0605<br />
-              Email: Jeanne.Chandler@cityofchicago.org
-            </p>
-
-            <p>If you have questions about the <strong>LargeLots.org</strong> website, contact Demond Drummer at <a href='mailto:ddrummer@teamworkenglewood.org'>ddrummer@teamworkenglewood.org</a></p>
-
             <hr />
             <h2 id='about'>About</h2>
-            <p><strong>LargeLots.org</strong> was initiated by <a href='https://twitter.com/citizendrummer'>Demond Drummer</a> at <a href='http://www.teamworkenglewood.org'>Teamwork Englewood</a>, built by <a href='http://datamade.us'>DataMade</a> and funded by <a href='http://www.lisc-chicago.org/'>LISC Chicago</a> with support from the <a href='http://www.boeing.com/boeing/companyoffices/aboutus/community/index.page'>Boeing Corporation</a>, and the <a href='http://www.knightfoundation.org'>Knight Foundation</a> for LISC's <a href='http://www.knightfoundation.org/grants/201346115/'>OpenGov for the Rest of Us</a> project.</p>
+            <p><strong>ChicagoLots.org</strong> was built by <a href='http://datamade.us'>DataMade</a> and is based on <a href='http://largelots.org'>LargeLots.org</a>, an app we built in partnership with <a href='http://www.teamworkenglewood.org'>Teamwork Englewood</a> and <a href='http://www.lisc-chicago.org/'>LISC Chicago</a>.</p>
 
             <p>Our map was built using open data from <a href='https://data.cityofchicago.org/'>Chicago</a> and <a href='https://datacatalog.cookcountyil.gov/'>Cook County</a>:</p>
 
@@ -275,12 +103,11 @@
             <p>We prepared some extracts of the above sources for this project. You can download those here:</p>
             
             <ul>
-                <li>Complete listing of lots displayed in the map (<a href="data/build/large_lot_listing.csv">CSV</a>)</li>
-                <li>Geospatial definitions of the lots displayed above (<a href="data/build/large_lot_area_parcels.zip">Shapefile</a>)</li>
-                <li>Boundary of the Large Lots Program area (<a href="data/build/large_lot_area_boundary.zip">Shapefile</a>)</li>
+                <li>Complete listing of lots displayed in the map (<a href="#">CSV</a>)</li>
+                <li>Geospatial definitions of the lots displayed above (<a href="#">Shapefile</a>)</li>
             </ul>
 
-            <p>All the code for this site is open source and <a href='https://github.com/datamade/large-lots'>available on Github</a>. We used the following open source tools:</p>
+            <p>All the code for this site is open source and <a href='https://github.com/datamade/chicago-lots'>available on Github</a>. We used the following open source tools:</p>
 
             <ul>
               <li><a href='http://www.qgis.org/en/site/'>QGIS</a> - graphic information system (GIS) desktop application</li>
@@ -295,7 +122,7 @@
         </div>
 
         <div class="footer">
-          <p class='pull-right'>&copy; <a href='http://datamade.us'>DataMade</a> and <a href='http://www.lisc-chicago.org/'>LISC-Chicago</a></p>
+          <p class='pull-right'>&copy; <a href='http://datamade.us'>DataMade</a></p>
         </div>
       </div>
     </div> <!-- /container -->
@@ -309,7 +136,7 @@
             <h4 class="modal-title" id="myModalLabel">Sorry! We couldn't find you</h4>
           </div>
           <div class="modal-body">
-            <p>We couldn't find your address within the Large Lots program area.</p>
+            <p>We couldn't find your address within the Chicago area.</p>
 
             <p>Try to include the street direction (N,S,E,W) or suffix (Ave, Dr, St, etc), or browse the map instead.</p>
           </div>

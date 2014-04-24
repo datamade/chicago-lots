@@ -1,11 +1,11 @@
-# Large Lots
+# Chicago Lots
 
-The City of Chicago is selling lots in Englewood for $1 until April 21, 2014. Here's how you get one.
+Explore City-owned lots in Chicago. Forked from [large-lots](https://github.com/datamade/large-lots).
 
 ## Running locally
 
 ``` bash
-git clone git@github.com:datamade/large-lots.git
+git clone git@github.com:datamade/chicago-lots.git
 cd large-lots
 
 # to run locally
@@ -33,21 +33,14 @@ We used the following open source tools:
 
 ## Team
 
-* Demond Drummer - idea, content, outreach
 * Derek Eder - developer, content
 * Eric van Zanten - developer, GIS data merging
 * Forest Gregg - process design, content
 
-## Contributors
-
-* Aya O'Connor - logo
-* Juan-Pablo Velez - content
-
-
 ## Errors / Bugs
 
 If something is not behaving intuitively, it is a bug, and should be reported.
-Report it here: https://github.com/datamade/englewood-large-lots/issues
+Report it here: https://github.com/datamade/chicago-lots/issues
 
 ## Note on Patches/Pull Requests
  
@@ -58,4 +51,4 @@ Report it here: https://github.com/datamade/englewood-large-lots/issues
 
 ## Copyright
 
-Copyright (c) 2014 DataMade and LISC-Chicago. Released under the [MIT License](https://github.com/datamade/large-lots/blob/master/LICENSE).
+Copyright (c) 2014 DataMade. Released under the [MIT License](https://github.com/datamade/chicago-lots/blob/master/LICENSE).

@@ -148,32 +148,30 @@ var LargeLots = {
 
   selectParcel: function (props){
       var address = LargeLots.formatAddress(props);
-      var zoning = LargeLots.getZoning(props.zoning_classification);
+      var zoning = LargeLots.simplifyZoning(props.zoning_classification);
       var info = "<p>Selected lot: </p><img class='img-responsive img-thumbnail' src='http://cookviewer1.cookcountyil.gov/Jsviewer/image_viewer/requestImg.aspx?" + props.pin14 + "=' />\
         <table class='table table-bordered table-condensed'><tbody>\
           <tr><td>Address</td><td>" + address + "</td></tr>\
           <tr><td>PIN</td><td>" + props.pin14 + "</td></tr>\
           <tr><td>&nbsp;</td><td><a target='_blank' href='http://cookcountypropertyinfo.com/Pages/PIN-Results.aspx?PIN=" + props.pin14 + "'>Tax and deed history &raquo;</a></td></tr>\
-          <tr><td>Zoned</td><td><a href='http://secondcityzoning.org/zone/" + props.zoning_classification + "' target='_blank'>" + props.zoning_classification + "</a></td></tr>\
-          <tr><td>Sq ft</td><td>" + props.sq_ft + "</td></tr>\
+          <tr><td>Zoned</td><td><a href='http://secondcityzoning.org/zone/" + zoning + "' target='_blank'>" + zoning + "</a></td></tr>\
+          <tr><td>Sq ft</td><td>" + LargeLots.addCommas(props.sq_ft) + "</td></tr>\
         </tbody></table>";
       $.address.parameter('pin', props.pin14)
       $('#lot-info').html(info);
   },
 
-  getZoning: function(code){
-      var zone_type = code.split('-')[0];
-      var text = '';
-      if (zone_type == 'RS'){
-          text = 'Single family home'
-      }
-      if (zone_type == 'RT'){
-          text = 'Two-flat, townhouse'
-      }
-      if (zone_type == 'RM'){
-          text = 'Medium-density apartment'
-      }
-      return text;
+
+  simplifyZoning: function(zone_class){
+    if (zone_class.substring(0, 'PMD'.length) === 'PMD') {
+      return "PMD";
+    }
+
+    if (zone_class.substring(0, 'PD'.length) === 'PD') {
+      return "PD";
+    }
+
+    return zone_class;
   },
 
   addressSearch: function (e) {
@@ -226,6 +224,18 @@ var LargeLots = {
       });
     LargeLots.marker = L.marker([first.lat, first.lon]).addTo(LargeLots.map);
   },
+
+  addCommas: function(nStr) {
+      nStr += '';
+      x = nStr.split('.');
+      x1 = x[0];
+      x2 = x.length > 1 ? '.' + x[1] : '';
+      var rgx = /(\d+)(\d{3})/;
+      while (rgx.test(x1)) {
+        x1 = x1.replace(rgx, '$1' + ',' + '$2');
+      }
+      return x1 + x2;
+    },
 
   //converts a slug or query string in to readable text
   convertToPlainString: function (text) {

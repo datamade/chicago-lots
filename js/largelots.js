@@ -100,6 +100,21 @@ var LargeLots = {
         //console.log('ERROR')
         //console.log(e)
       });
+
+      var legend = L.control({position: 'topright'});
+      legend.onAdd = function (map) {
+ 
+           var div = L.DomUtil.create('div', 'info legend')
+ 
+           div.innerHTML = '\
+           <h4>Lot zoned for</h4>\
+           <i style="background:#41ab5d"></i> Residential<br />\
+           <i style="background:#6baed6"></i> Non-Residential';
+           return div;
+       };
+ 
+       legend.addTo(LargeLots.map);
+
       $("#search_address").val(LargeLots.convertToPlainString($.address.parameter('address')));
       LargeLots.addressSearch();
   },

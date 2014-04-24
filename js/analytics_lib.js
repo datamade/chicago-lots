@@ -10,7 +10,7 @@
  *
  */
 
-var analyticsTrackingCode = 'UA-49485819-1'; //enter your tracking code here
+var analyticsTrackingCode = 'UA-49485819-2'; //enter your tracking code here
 
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', analyticsTrackingCode]);

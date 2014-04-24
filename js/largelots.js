@@ -2,19 +2,19 @@ var LargeLots = LargeLots || {};
 var LargeLots = {
 
   map: null,
-  map_centroid: [41.77809673652204, -87.63673782348633],
-  defaultZoom: 13,
+  map_centroid: [41.8781136, -87.66677856445312],
+  defaultZoom: 11,
   lastClickedLayer: null,
   geojson: null,
   marker: null,
   locationScope: 'Chicago',
-  boundaryCartocss: '#large_lot_boundary{polygon-fill: #ffffcc;polygon-opacity: 0.2;line-color: #FFF;line-width: 3;line-opacity: 1;}',
+  boundaryCartocss: '#large_lot_boundary{polygon-fill: #ffffbf;polygon-opacity: 0.2;line-color: #FFF;line-width: 3;line-opacity: 1;}',
   parcelsCartocss: $('#englewood-styles').html().trim(),
   boundingBox: {
-    'bottom': 41.74378003152462,
-    'top': 41.807788914288814,
-    'right': -87.57219314575195,
-    'left': -87.69750595092773
+    'bottom': 42.023134979999995,
+    'top': 41.644286009999995,
+    'right': -87.52366115999999,
+    'left': -87.94010087999999
   },
 
   initialize: function() {

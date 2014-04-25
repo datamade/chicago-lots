@@ -1,6 +1,6 @@
 # Chicago Lots
 
-Explore City-owned lots in Chicago. Forked from [large-lots](https://github.com/datamade/large-lots).
+Explore vacant City-owned lots in Chicago. Forked from [large-lots](https://github.com/datamade/large-lots).
 
 ## Running locally
 

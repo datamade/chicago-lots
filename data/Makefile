@@ -20,7 +20,7 @@ land-inventory.table: land-inventory.csv
 
 cook-county-parcels.table: cook-county-parcels.zip
 	@mkdir -p raw/cook-county
-	@unzip -d raw/cook-county -f raw/$(notdir $?)
+	@unzip -d raw/cook-county -f raw/cook-county-parcels.zip
 	@ogr2ogr -t_srs EPSG:4326 build/$(shp) raw/cook-county/$(shp)
 	@shp2pgsql -I -s 4326 -d build/$(shp) cook_county_parcels | \
 		psql -d $(PG_DB) -U $(PG_USER) -h $(PG_HOST) -p $(PG_PORT)

@@ -49,7 +49,7 @@ var LargeLots = {
           info += "<p>PIN: " + props.pin14 + "<br />";
           info += "Zoned: " + props.zoning_classification + "<br />";
           info += "Sq Ft: " + props.sq_ft + "<br />";
-          
+
           this._div.innerHTML  = info;
         }
       };
@@ -66,7 +66,7 @@ var LargeLots = {
           user_name: 'datamade',
           type: 'cartodb',
           sublayers: [{
-                  sql: "SELECT * FROM land_inventory_parcels",
+                  sql: "SELECT * FROM chicago_lots",
                   cartocss: LargeLots.parcelsCartocss,
                   interactivity: fields
               },
@@ -103,16 +103,16 @@ var LargeLots = {
 
       var legend = L.control({position: 'topright'});
       legend.onAdd = function (map) {
- 
+
            var div = L.DomUtil.create('div', 'info legend')
- 
+
            div.innerHTML = '\
            <h4>Lot zoned for</h4>\
            <i style="background:#41ab5d"></i> Residential<br />\
            <i style="background:#6baed6"></i> Non-Residential';
            return div;
        };
- 
+
        legend.addTo(LargeLots.map);
 
       $("#search_address").val(LargeLots.convertToPlainString($.address.parameter('address')));
@@ -135,7 +135,7 @@ var LargeLots = {
         LargeLots.map.removeLayer(LargeLots.lastClickedLayer);
       }
       var sql = new cartodb.SQL({user: 'datamade', format: 'geojson'});
-      sql.execute('select * from land_inventory_parcels where pin14 = {{pin14}}', {pin14:pin14})
+      sql.execute('select * from chicago_lots where pin14 = {{pin14}}', {pin14:pin14})
         .done(function(data){
             var shape = data.features[0];
             LargeLots.lastClickedLayer = L.geoJson(shape);

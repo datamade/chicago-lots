@@ -66,7 +66,7 @@ var LargeLots = {
           user_name: 'datamade',
           type: 'cartodb',
           sublayers: [{
-                  sql: "SELECT * FROM chicago_lots",
+                  sql: "SELECT * FROM chicago_land_inventory",
                   cartocss: LargeLots.parcelsCartocss,
                   interactivity: fields
               },
@@ -135,7 +135,7 @@ var LargeLots = {
         LargeLots.map.removeLayer(LargeLots.lastClickedLayer);
       }
       var sql = new cartodb.SQL({user: 'datamade', format: 'geojson'});
-      sql.execute('select * from chicago_lots where pin14 = {{pin14}}', {pin14:pin14})
+      sql.execute('select * from chicago_land_inventory where pin14 = {{pin14}}', {pin14:pin14})
         .done(function(data){
             var shape = data.features[0];
             LargeLots.lastClickedLayer = L.geoJson(shape);

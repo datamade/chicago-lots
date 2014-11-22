@@ -26,15 +26,23 @@
     <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
     <style id="chicago-lots-styles">
       #parcel {
-        polygon-fill: #6baed6;
+        polygon-fill: #cccccc;
         polygon-opacity: 0.7;
-        line-color: #08519c;
+        line-color: #666666;
         line-width: 0.5;
         line-opacity: 1;
       }
       #parcel[zoning_classification=~".*R.*"] {
        line-color: #006d2c;
        polygon-fill: #41ab5d;
+      }
+      #parcel[zoning_classification=~"M.*"] {
+       line-color: #3b3b10;
+       polygon-fill: #DCDC7F;
+      }
+      #parcel[zoning_classification=~"[C,B].*"] {
+       line-color: #08519c;
+       polygon-fill: #6baed6;
       }
     </style>
   </head>

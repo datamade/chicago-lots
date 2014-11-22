@@ -8,7 +8,7 @@ var LargeLots = {
   geojson: null,
   marker: null,
   locationScope: 'Chicago',
-  boundaryCartocss: '#large_lot_boundary{polygon-fill: #ffffbf;polygon-opacity: 0.2;line-color: #FFF;line-width: 3;line-opacity: 1;}',
+  boundaryCartocss: '#large_lot_boundary{polygon-fill: #ffffbf;polygon-opacity: 0.1;line-color: #FFF;line-width: 3;line-opacity: 1;}',
   parcelsCartocss: $('#chicago-lots-styles').html().trim(),
   boundingBox: {
     'bottom': 42.023134979999995,
@@ -108,8 +108,10 @@ var LargeLots = {
 
            div.innerHTML = '\
            <h4>Lot zoned for</h4>\
-           <i style="background:#41ab5d"></i> Residential<br />\
-           <i style="background:#6baed6"></i> Non-Residential';
+           <i style="background:#6baed6"></i> Residential<br />\
+           <i style="background:#41ab5d"></i> Commercial<br />\
+           <i style="background:#DCDC7F"></i> Industrial<br />\
+           <i style="background:#cccccc"></i> Other';
            return div;
        };
 
@@ -140,7 +142,7 @@ var LargeLots = {
             var shape = data.features[0];
             LargeLots.lastClickedLayer = L.geoJson(shape);
             LargeLots.lastClickedLayer.addTo(LargeLots.map);
-            LargeLots.lastClickedLayer.setStyle({fillColor:'#f7fcb9', weight: 2, fillOpacity: 1, color: '#000'});
+            LargeLots.lastClickedLayer.setStyle({weight: 2, fillOpacity: 0, color: '#000'});
             LargeLots.map.setView(LargeLots.lastClickedLayer.getBounds().getCenter(), 17);
             LargeLots.selectParcel(shape.properties);
         });

@@ -29,10 +29,24 @@ var LargeLots = {
       // render a map!
       L.Icon.Default.imagePath = '/images/'
 
-      L.tileLayer('https://{s}.tiles.mapbox.com/v3/datamade.hn83a654/{z}/{x}/{y}.png', {
-          attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'
-      }).addTo(LargeLots.map);
+      LargeLots.streets = L.tileLayer('https://{s}.tiles.mapbox.com/v3/datamade.hn83a654/{z}/{x}/{y}.png', {
+        attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>',
+        detectRetina: true
+      });
 
+      LargeLots.satellite = L.tileLayer('https://{s}.tiles.mapbox.com/v3/datamade.k92mcmc8/{z}/{x}/{y}.png', {
+        attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>',
+        detectRetina: true
+      });
+
+      LargeLots.buildings = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+        detectRetina: true
+      });
+
+      LargeLots.baseMaps = {"Streets": LargeLots.streets, "Building addresses": LargeLots.buildings, "Satellite": LargeLots.satellite};
+      LargeLots.streets.addTo(LargeLots.map);
+      
       LargeLots.info = L.control({position: 'bottomright'});
 
       LargeLots.info.onAdd = function (map) {
@@ -78,6 +92,10 @@ var LargeLots = {
       cartodb.createLayer(LargeLots.map, layerOpts)
         .addTo(LargeLots.map)
         .done(function(layer) {
+
+            // after layer is loaded, add the layer toggle control
+            L.control.layers(LargeLots.baseMaps, {"City-owned parcels": layer}, { collapsed: false, autoZIndex: true }).addTo(LargeLots.map);
+
             var sublayer = layer.getSubLayer(0)
             sublayer.setInteraction(true);
             sublayer.on('featureOver', function(e, latlng, pos, data, subLayerIndex) {
@@ -101,13 +119,14 @@ var LargeLots = {
         //console.log(e)
       });
 
-      var legend = L.control({position: 'topright'});
+      
+      var legend = L.control({position: 'bottomleft'});
       legend.onAdd = function (map) {
 
            var div = L.DomUtil.create('div', 'info legend')
 
            div.innerHTML = '\
-           <h4>Lot zoned for</h4>\
+           <h4>Zoning</h4>\
            <i style="background:#41ab5d"></i> Residential<br />\
            <i style="background:#6baed6"></i> Commercial<br />\
            <i style="background:#DCDC7F"></i> Industrial<br />\

@@ -108,8 +108,8 @@ var LargeLots = {
 
            div.innerHTML = '\
            <h4>Lot zoned for</h4>\
-           <i style="background:#6baed6"></i> Residential<br />\
-           <i style="background:#41ab5d"></i> Commercial<br />\
+           <i style="background:#41ab5d"></i> Residential<br />\
+           <i style="background:#6baed6"></i> Commercial<br />\
            <i style="background:#DCDC7F"></i> Industrial<br />\
            <i style="background:#cccccc"></i> Other';
            return div;

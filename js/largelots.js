@@ -85,7 +85,7 @@ var LargeLots = {
                   interactivity: fields
               },
               {
-                  sql: 'select * from chicago_city_boundary',
+                  sql: "select * from chicago_community_areas WHERE community = 'CHICAGO'",
                   cartocss: LargeLots.boundaryCartocss
               }]
       }

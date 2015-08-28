@@ -46,7 +46,7 @@ var LargeLots = {
 
       LargeLots.baseMaps = {"Streets": LargeLots.streets, "Building addresses": LargeLots.buildings, "Satellite": LargeLots.satellite};
       LargeLots.streets.addTo(LargeLots.map);
-      
+
       LargeLots.info = L.control({position: 'bottomright'});
 
       LargeLots.info.onAdd = function (map) {
@@ -74,7 +74,7 @@ var LargeLots = {
 
       LargeLots.info.addTo(LargeLots.map);
 
-      var fields = "pin14,zoning_classification,ward,street_name,dir,street_number,type,sq_ft"
+      var fields = "pin14,zoning_classification,ward,street_name,street_dir,street_number,street_type,sq_ft"
       var cartocss = $('#chicago-lots-styles').html().trim();
       var layerOpts = {
           user_name: 'datamade',
@@ -119,7 +119,7 @@ var LargeLots = {
         //console.log(e)
       });
 
-      
+
       var legend = L.control({position: 'bottomleft'});
       legend.onAdd = function (map) {
 
@@ -148,7 +148,7 @@ var LargeLots = {
   },
 
   formatAddress: function (prop) {
-    return prop.street_number + " " + prop.dir + " " + prop.street_name + " " + prop.type;
+    return prop.street_number + " " + prop.street_dir + " " + prop.street_name + " " + prop.street_type;
   },
 
   getOneParcel: function(pin14){
